@@ -3,7 +3,7 @@
   --text-color: #e4e4e4;
   --link-color: #a8dadc;
   --visited-link-color: #b39cd0;
-  --hr-color: #e4e4e4;
+  --hairline: rgba(228, 228, 228, 0.2);
 }
 
 body {
@@ -43,9 +43,32 @@ a:visited { color: var(--visited-link-color); }
 .tagline { font-size: clamp(1rem, 3vw, 1.25rem); opacity: 0.8; margin: 0 0 1.5rem; }
 
 .social-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-.social-links a { text-decoration: none; font-size: 1rem; }
+.social-links a { text-decoration: none; font-size: clamp(1rem, 3vw, 1.125rem); }
 .social-links a:hover { text-decoration: underline; }
+
+.hero-divider { border: none; border-top: 1px solid var(--hairline); width: min(100%, 16rem); margin: 1.25rem auto; }
 
 footer { display: flex; justify-content: center; padding: 2rem 1rem; font-size: 0.875rem; opacity: 0.6; }
 
-@media (max-width: 480px) { .wrapper { padding: 0.75rem; } .hero { padding: 1.5rem 0; } }
+.page-header { display: flex; flex-direction: column; padding: 1.5rem 0 2rem; }
+.back-link { align-self: flex-start; font-size: 0.875rem; text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+.page-title { font-size: clamp(1.5rem, 5vw, 2.5rem); font-weight: 700; margin: 2rem 0 0; }
+.page-subtitle { font-size: clamp(1rem, 3vw, 1.25rem); opacity: 0.8; margin: 0.5rem 0 0; }
+
+.tool-item {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 0 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.tool-item:first-child { border-top: 1px solid var(--hairline); }
+.tool-index { font-size: 0.875rem; opacity: 0.5; padding-top: 0.2rem; }
+.tool-name { font-size: clamp(1rem, 3vw, 1.125rem); font-weight: 700; margin: 0; }
+.tool-name a { text-decoration: none; }
+.tool-name a:hover { text-decoration: underline; }
+.tool-desc { font-size: 0.9375rem; opacity: 0.8; margin: 0.35rem 0 0.5rem; }
+.tool-meta { font-size: 0.8rem; opacity: 0.6; margin: 0; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+@media (max-width: 480px) { .wrapper { padding: 0.75rem; } .hero { padding: 1.5rem 0; } .tool-item { grid-template-columns: 3rem 1fr; gap: 0 0.75rem; } }
